@@ -1,4 +1,5 @@
-###Favorites Software Engineer Hiring Test
+Favorites Software Engineer Hiring Test
+-
 
 This is a Django small project I undertook for a coding interview. The requirements for this project are listed in the about page of the live project.
 
@@ -48,9 +49,11 @@ When starting this project I broke down the development processes into different
         
 In total this project took a day to complete & half a day to launch onto the cloud for hosting. 
 
-####Things I Learned:
+Things I Learned:
+-
 Learned how to speed up my development time with this project & added a few new libraries into the project like tinymce.
 
-####How to Install:
+How to Install:
+-
 Installation of the project is relatively simple, I've included a requirements file & .gitignore so install the pip install requirements.txt. Setup a fresh database and connect it into the project, run migrations, collectstatic and you'll be running.
 

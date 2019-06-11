@@ -1,7 +1,7 @@
 Technical Questions (1-4)
 -
 ![alt text](https://imgur.com/SfdeTSy.png)
-#####1.) [myself.json](https://www.google.com)
+#####1.) [myself.json](https://github.com/cryptopotluck/favorite-things/blob/master/technical_questions_and_quiz/myself.json)
 
 #####2.) How long did you spend on the coding test below? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.
 
