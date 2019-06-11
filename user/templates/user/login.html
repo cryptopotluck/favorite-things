@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content" style="background-image: url('https://i.pinimg.com/originals/bb/14/47/bb1447a269170fd3a2bf0e35e5cb3264.gif'); background-size: cover">
+    <br>
+        <br>
+        <br>
+        <br>
+<div class="container">
+          <div class="row">
+
+            <div class="col-lg-5 col-md-5 ml-auto">
+
+            </div>
+            <div class="col-6">
+        <!-- Alerts -->
+        {% include 'partials/_alerts.html' %}
+        <form action="{% url 'login' %}" method="post" id="LoginValidation" novalidate="novalidate">
+            {% csrf_token %}
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Login Form</h4>
+                </div>
+                <div class="card-body">
+                  <div class="form-group has-label">
+                    <label>
+                      User Name *
+                    </label>
+                      <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="nc-icon nc-single-02"></i>
+                              </div>
+                            </div>
+                            <input class="form-control" name="username" type="text" id="username" placeholder="User Name..." required="">
+                          </div>
+                  </div>
+                  <div class="form-group has-label">
+                    <label>
+                      Password *
+                    </label>
+                      <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-unlock-alt"></i> &nbsp; &nbsp; &nbsp;
+                              </div>
+                            </div>
+                            <input class="form-control" name="password" id="password" type="password" placeholder="Password..." required="">
+                          </div>
+                  </div>
+                  <div class="category form-category">* Required fields</div>
+                </div>
+                <div class="card-footer">
+                <div class="row">
+                <div class="col-1"></div>
+                <div class="col-7">
+                <p>Dont have a account? </p>
+                <a href="{% url 'register' %}">Register Here</a>
+                </div>
+                <div class="col-4">
+                  <button type="submit" class="btn btn-info animation-on-hover">Login</button></div>
+                </div>
+              </div></div>
+            </form>
+    </div>
+          </div>
+</div>
+    </div>
+{% endblock %}

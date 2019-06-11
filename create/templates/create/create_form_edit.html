@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content" xmlns="http://www.w3.org/1999/html">
+                <form method="POST" action="#" id="post-form-id">
+
+    <div class="container">
+        <div class="card">
+            <br>
+            <div class="container">
+    <div class="row">
+                    <label class="col-sm-2 col-form-label">Title:</label>
+                    <div class="col-sm-10">
+                      {{ form.title }}
+
+    </div>
+    </div>
+        </div>
+    </div>
+        <div class="container">
+        <div class="row">
+
+            <label>Category: &nbsp; </label> <input id='hidden-category' data-role="tagsinput" name="hidden-category-value" type="hidden" placeholder="add or remove..">
+    </div></div>
+
+{% csrf_token %}
+            <div class="card">
+                <br>
+                <div class="container">
+                    {{ form.media }}
+                <div style="width: 100%">{{ form.body |safe }}</div></div>
+                <div class="card card-plain">
+                    <div class="card-header" role="tab" id="headingOne">
+                     <center> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                          Rank & Meta Data
+                        <i class="nc-icon nc-minimal-down"></i>
+                      </a></center>
+                    </div>
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" style="">
+                      <div class="card-body">
+                          <div class="row">
+                          <div class="col-6">
+                              <div class="form-group">
+    <label for="exampleFormControlSelect2">Ranking:</label>
+    {{ form.rank }}
+                          </div>
+                          </div>
+
+                              <div class="col-6"><div class="row">
+<div class="col-6">
+
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Metadata:</label>
+    {{ form.metadasta_choice }}
+  </div>
+</div>
+                                  <div class="col-6">
+{{ form.metadata }}
+</div>
+</div>
+                              </div>
+
+                          </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-8">
+
+            </div>
+            <div class="col-4">
+                <center><div id='post-submit' type="sumit" value="post" name="post" class="button btn btn-success btn-round">Submit</div></center>
+            </div>
+        </div>
+</div>
+
+    </form>
+    </div>
+
+    <script>
+
+    document.getElementById("post-submit").addEventListener("click", function(event){
+        console.log('listener click');
+        event.preventDefault();
+        $('#hidden-tags').val( $('#tags-id').val() );
+        $('#post-form-id').submit();
+    });
+
+    /*$('#post-submit').on('click',function(e){
+          console.log('click detected');
+          e.preventDefault();
+          console.log(' test ');
+          $('#hidden-tags').val( $('#tags-id').val() );
+          $('#post-form-id').submit();
+    });*/
+
+</script>
+
+{% endblock %}

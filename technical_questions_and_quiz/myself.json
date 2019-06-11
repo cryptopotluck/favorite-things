@@ -1,0 +1,42 @@
+[{
+  "created_at": "Thu June 06 19:00:00 2019",
+  "id": 1,
+  "name": "Austin Kiesewetter",
+  "screen_name": "cryptopotluck",
+  "age": "23",
+  "programing_skills": {
+    "python": "Three Years",
+    "django": "Three Years",
+    "postgres_sql": "Three Years",
+    "graph_ql": "Two Years",
+    "rest_api": "One Year",
+    "node": "One Year",
+    "javascript": "One Year",
+    "react": "One Year",
+    "html": "Five Years",
+    "css": "Five Years",
+  },
+  "libraries": {
+    "plotly": "Two Years",
+    "Dash": "Two Years",
+    "python_binance": "Two Years",
+    "redis": "One Year",
+    "docker": "One Year"
+  },
+  "tools_mastered": {
+    "photoshop": "Six Years",
+    "final_cut_pro": "Six Years",
+    "adobe_after_effects": "Two Years",
+    "obs": "Two Years",
+    "autocad": "One Year"
+},
+  "description": "Enjoy Fishing, hanging out with friends and traveling really into building things coding or non-coding related. Always wanted to be a inventor growing up so I've devoted my time to achieving this childhood dream. Also very patriotic, one of the few millennials left who still believes in the American Dream.",
+  "personality": "I can easily switch between both extroverted or introverted roles, I've worked with clients & customer service roles my whole life so I have good people skills. I have a personality, and i believe i'd be able to adapt & culture fit into any company. ",
+  "sex": "Male",
+  "race": "White",
+  "nationality": "U.S. Citizen",
+  "veteran": false,
+  "disability": false,
+  "r_work_visa": false,
+  "will_relocate": true
+}]

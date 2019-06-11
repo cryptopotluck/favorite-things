@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content">
+    <div class="container">
+        <div class="card">
+            <br>
+            <div class="container">
+    <div class="row">
+                    <label class="col-sm-2 col-form-label">Title:</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <input type="text" class="form-control">
+                        <span class="form-text">*Required</span>
+                      </div>
+
+    </div>
+    </div>
+        </div>
+    </div>
+        <div class="row">
+        <div class="bootstrap-tagsinput primary-badge"> <label>Category: &nbsp; </label><span class="badge badge badge-success">Person<span data-role="remove"></span></span> <span class="badge badge badge-warning">Place<span data-role="remove"></span></span> <span class="badge badge badge-danger">Food<span data-role="remove"></span></span> <input id='tags-id' data-role="tagsinput" type="text" placeholder="add or remove.."></div>
+    </div>
+                    <form method="POST" action="#" id="post-form-id">
+{% csrf_token %}
+            <div class="card">
+                <br>
+                <div class="container">
+                <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div></div>
+                <div class="card card-plain">
+                    <div class="card-header" role="tab" id="headingOne">
+                     <center> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                          Rank & Meta Data
+                        <i class="nc-icon nc-minimal-down"></i>
+                      </a></center>
+                    </div>
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" style="">
+                      <div class="card-body">
+                          <div class="row">
+                          <div class="col-6">
+                              <div class="form-group">
+    <label for="exampleFormControlSelect2">Ranking:</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+        <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+        <option>11</option>
+      <option>12</option>
+      <option>13</option>
+      <option>14</option>
+      <option>15</option>
+        <option>16</option>
+      <option>17</option>
+      <option>18</option>
+      <option>19</option>
+      <option>20</option>
+        <option>21</option>
+      <option>22</option>
+      <option>23</option>
+      <option>24</option>
+      <option>25</option>
+        <option>26</option>
+      <option>27</option>
+      <option>28</option>
+      <option>29</option>
+      <option>30</option>
+        <option>31</option>
+      <option>32</option>
+      <option>33</option>
+      <option>34</option>
+      <option>35</option>
+        <option>36</option>
+      <option>37</option>
+      <option>38</option>
+      <option>39</option>
+      <option>40</option>
+    </select>
+  </div>
+                          </div>
+                              <div class="col-6"><div class="row">
+<div class="col-6">
+
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Metadata:</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Text</option>
+      <option>Number</option>
+      <option>Date</option>
+      <option>Enum</option>
+    </select>
+  </div>
+</div>
+                                  <div class="col-6">
+                                      {{ form.media }}
+        <div style="width: 100%;">{{ form.body |safe }}</div>
+</div>
+</div>
+                                  <div class="col-6">
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-8">
+
+            </div>
+            <div class="col-4">
+                <center><div id='post-submit' type="sumit" value="post" name="post" class="button btn btn-success btn-round">Submit</div></center>
+            </div>
+        </div>
+</div>
+                        {{ form }}
+                    </form>
+    </div></div>
+
+    <script>
+
+    document.getElementById("post-submit").addEventListener("click", function(event){
+        console.log('listener click');
+        event.preventDefault();
+        $('#hidden-tags').val( $('#tags-id').val() );
+        $('#post-form-id').submit();
+    });
+
+    /*$('#post-submit').on('click',function(e){
+          console.log('click detected');
+          e.preventDefault();
+          console.log(' test ');
+          $('#hidden-tags').val( $('#tags-id').val() );
+          $('#post-form-id').submit();
+    });*/
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content" xmlns="http://www.w3.org/1999/html">
+                <form method="POST" action="#" id="post-form-id">
+
+    <div class="container">
+        <div class="card">
+            <br>
+            <div class="container">
+    <div class="row">
+                    <label class="col-sm-2 col-form-label">Title:</label>
+
+                     <h5> {{ object.title |safe | capfirst }}</h5>
+
+
+    </div>
+        </div>
+    </div>
+        <div class="container">
+        <div class="row">
+
+    </div></div>
+
+{% csrf_token %}
+            <div class="card">
+                <br>
+                <div class="container">
+                    {{ form.media }}
+                <div style="width: 100%">{{ object.body |safe }}</div></div>
+                <div class="card card-plain">
+                    <div class="card-header" role="tab" id="headingOne">
+                     <center> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                          Rank & Meta Data
+                        <i class="nc-icon nc-minimal-down"></i>
+                      </a></center>
+                    </div>
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" style="">
+                      <div class="card-body">
+                          <div class="row">
+                          <div class="col-6">
+                              <div class="form-group">
+    <label for="exampleFormControlSelect2">Ranking:</label>
+    {{ object.rank | safe}}
+                          </div>
+                          </div>
+
+                              <div class="col-6">
+                                 <label>Metadata:</label> {{ object.metadata }}
+                              </div>
+
+                          </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+        <div class="container">
+        <div class="row">
+            <div class="col-8">
+
+            </div>
+            <div class="col-4">
+                <center><a id='goback' href="javascript:history.back()" class="button btn btn-secondary btn-round">
+                    Go Back</a></center>
+            </div>
+        </div>
+</div>
+
+    </form>
+    </div>
+{% endblock %}

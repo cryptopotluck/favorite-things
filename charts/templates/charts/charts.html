@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% load plotly_dash %}
+    <div class="content">
+    {{ plot | safe }}
+    </div>
+    {{ users }}
+    {{ test }}
+{% endblock %}

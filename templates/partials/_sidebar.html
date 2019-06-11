@@ -1,0 +1,80 @@
+{% load static %}
+<div class="sidebar" data-color="brown" data-active-color="danger">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="sidebar-wrapper">
+        <div class="user">
+          <div class="info">
+            <a data-toggle="collapse" href="#collapseExample" class="collapsed" aria-expanded="false">
+
+              <span>
+                            <img src="http://austinkiese.com/examples/assets/img/presentation-page/potluckimg/cryptopotlcuk.png">
+
+              </span>
+            </a>
+            <div class="clearfix"></div>
+            <div class="collapse" id="collapseExample" style="">
+              <ul class="nav">
+                <li>
+                  <a href="http://austinkiese.com">
+                    <span class="sidebar-mini-icon">P</span>
+                    <span class="sidebar-normal">My Portfolio</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://cryptopotluck.com/">
+                    <span class="sidebar-mini-icon">CP</span>
+                    <span class="sidebar-normal">Cryptopotluck.com</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/cryptopotluck">
+                    <span class="sidebar-mini-icon">G</span>
+                    <span class="sidebar-normal">Github</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <ul class="nav">
+            {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'index' %}">
+              <i class="nc-icon nc-book-bookmark"></i>
+              <p>
+                Favorites
+
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'create' %}">
+              <i class="nc-icon nc-ruler-pencil"></i>
+              <p>
+                Create
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'chart' %}">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p>Charts</p>
+            </a>
+          </li>
+                {% else %}
+                <li>
+            <a href="{% url 'login' %}">
+              <i class="nc-icon nc-book-bookmark"></i>
+              <p>
+                Login
+
+              </p>
+            </a>
+          </li>
+                {% endif %}
+        </ul>
+      </div>
+    </div>
+

@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content">
+    <span class="ea-test"><h1>Software Engineer Hiring Test</h1>
+<p>Thank you for taking the time to get this far in BriteCore's technical test. This final stage consists of two parts:</p>
+<ul>
+<li>A few technical questions</li>
+<li>A coding test</li>
+</ul>
+<p>To submit your results, create a GitHub or GitLab repo called <code>favorite-things</code>. This is what you enter into the job submission fields.</p>
+<h1>Technical Questions</h1>
+<ol>
+<li>Please describe yourself using JSON in a file called <code>myself.json</code>.</li>
+</ol>
+<p>Please answer the following questions in a markdown file called <code>answers.md</code>.</p>
+<ol start="2">
+<li>How long did you spend on the coding test below? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.</li>
+<li>What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.</li>
+<li>How would you track down a performance issue in production? Have you ever had to do this?</li>
+</ol>
+<p>This outlines a problem we've ran into in the past. We'd like to see how you would handle it. What is most important is gaining some insight into your development process and seeing how you work.</p>
+<h1>Coding Test</h1>
+<p>This fun coding test allows us to evaluate your ability to understand requirements and your coding style and habits. Your time is valuable so we encourage you to find ways to maximize results for minimal effort. The project is an application that allows the user to track their favorite things. The necessary data to track is:</p>
+<ul>
+<li><strong>Title:</strong> Required field. A short, descriptive name of a favorite thing.</li>
+<li><strong>Description:</strong> Optional field. A long description of a favorite thing. Can be empty, but if it has any text then then minimum length is 10 characters.</li>
+<li><strong>Ranking:</strong> Required numeric field. A numbered priority according to the user (1...n). Ranking numbers
+should not repeat for the given category, so if a ranking is set on a new favorite thing as "1", then all
+other favorite things for that favorite should be reordered.</li>
+<li><strong>Metadata:</strong> Optional field. A key/value store where valid data types include <code>text</code>, <code>number</code>, <code>date</code>, and <code>enum</code> types.</li>
+<li><strong>Category:</strong> Required data per favorite thing. Selectable between person, place, or food, but users must be able add more categories.</li>
+<li><strong>Created Date:</strong> Required automatic field. Not entered by user but visible to them.</li>
+<li><strong>Modified Date:</strong> Required automatic field. Not entered by user but visible to them.</li>
+<li><strong>Audit Log:</strong> Automatically generated on data. All changes to data must be logged. Not entered by user but visible to them.</li>
+</ul>
+<h3>Backend</h3>
+<p>For the backend, this is your chance to show us that you know how to create clean REST or GraphQL APIs. You must support all of the data specified above. Represent all the data with at least the following:</p>
+<table>
+<thead>
+<tr>
+<th>API Type</th>
+<th>Representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REST</td>
+<td>GET, PUT, POST</td>
+</tr>
+<tr>
+<td>GraphQL</td>
+<td>Queries, Mutations</td>
+</tr>
+</tbody>
+</table>
+<p>The backend must be built using these options:</p>
+<ul>
+<li>OS: Any flavor of Linux</li>
+<li>Server Side Scripting: Python 2.7+ or 3.6+</li>
+<li>Server Framework: Django or Flask</li>
+<li>Backend Database: PostgreSQL (Django), MySQL (Django or Flask), DynamoDB (Flask)</li>
+<li>ORM: Django or SQLAlchemy (Flask-only) or Boto3 (DynamoDB only)</li>
+<li>Deployment: Any means you prefer</li>
+</ul>
+<h3>Frontend</h3>
+<p>The frontend is all about how the user interacts with the data. All data must be visible to the user, including a list of favorite things within a category.</p>
+<h3>Coding Test Deliverables</h3>
+<ol>
+<li>
+<p>The code to your project, including a single Python file called <code>models.py</code> anywhere in your project containing the ORM classes for these tables.</p>
+<ul>
+<li><strong>Bonus points</strong> if you include a <code>.gitignore</code> file.</li>
+<li><strong>Bonus points</strong> if you demonstrate steps taken to autolint your code.</li>
+</ul>
+</li>
+<li>
+<p>An entity relationship diagram, which depicts the table(s) and their relationship to one another.</p>
+</li>
+<li>
+<p>A well-tested REST or GraphQL API written in Python.</p>
+<ul>
+<li>If using Django, you <strong>must</strong> use Django REST Framework's Class-Based Views. Projects with Function-based views will be automatically rejected.</li>
+<li>If using Flask, you <strong>must</strong> return JSON responses.</li>
+</ul>
+</li>
+<li>
+<p>A deployed version of your project</p>
+<ul>
+<li><strong>Bonus points</strong> if you also orchestrate the launch environment in AWS using CloudFormation</li>
+<li><strong>Mega bonus points</strong> if you host the app in <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> using <a href="https://github.com/Miserlou/Zappa">Zappa</a> or <a href="https://aws.amazon.com/ecs/">AWS ECS</a> using <a href="https://aws.amazon.com/fargate/">AWS Fargate</a></li>
+</ul>
+</li>
+<li>
+<p>Fields should use appropriate widgets based on their type. <code>text</code> fields should display as text boxes, <code>date</code> fields should use date pickers, and so on.</p>
+</li>
+</ol>
+<ul>
+<li><strong>Bonus points</strong> for an attractive yet usable interface. Use any Javascript framework but understand that at BriteCore we are moving from JQuery/Knockout.js to VueJS</li>
+<li><strong>Mega Bonus points</strong> for using VueJS</li>
+<li><strong>Mega bonus points squared</strong> for using VueJS as a Single Page App</li>
+</ul>
+<ol start="6">
+<li>
+<p>A GitHub or GitLab repo called <code>favorite-things</code> containing your project. Your repo must contain these three things:</p>
+<ul>
+<li>A README that explains your approach and deployment method in clear, concise English</li>
+<li>The entity relationship diagram for your test</li>
+<li>Your code solution to this test</li>
+<li>The Python file called <code>quiz.py</code> that you used to solve the debugging quiz</li>
+</ul>
+</li>
+<li>
+<p>When you apply to BriteCore provide this information:</p>
+<ul>
+<li>Your resume and optional cover letter</li>
+<li>The link to the GitHub/GitLab repo that lists your project</li>
+<li>The link to the deployed version of your project</li>
+</ul>
+</li>
+<li>
+<p>Choose one of BriteCore office locations (all remote):</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://britecore.bamboohr.com/jobs/view.php?id=38">Boston, Massacussets</a></li>
+<li><a href="https://britecore.bamboohr.com/jobs/view.php?id=39">Los Angeles, California</a></li>
+<li><a href="https://britecore.bamboohr.com/jobs/view.php?id=9">Springfield, Missouri</a></li>
+</ul>
+<h2>Evaluation</h2>
+<p>If you'd like to do very well on this project, we'll hand you the categories we utilize to score candidates! They are:</p>
+<ul>
+<li>Business requirements are met or exceeded</li>
+<li>All eight deliverables are accounted for</li>
+<li>Documentation in clearly-written English</li>
+<li>Python Code is PEP8 compliant and avoids antipatterns such as <code>local_settings</code></li>
+<li>JavaScript code follows common best practices</li>
+<li>CSS Framework utilized correctly</li>
+<li>Test coverage is complete and meaningful</li>
+<li>Deployment is fully scripted</li>
+<li>Communication is positive and respectful</li>
+</ul>
+<h2>Questions</h2>
+<p>For questions, please use hiring@britecore.com.</p>
+<hr>
+<p>Thank you for your time. We are excited to review your project!</p>
+</span>
+    </div>
+{% endblock %}
