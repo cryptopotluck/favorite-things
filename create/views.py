@@ -151,7 +151,7 @@ class PostUpdateView(View):
 
 class PostDeleteView( LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Create
-    success_url = '/'
+    success_url = '/favorites/'
 
     def test_func(self):
         post = self.get_object()

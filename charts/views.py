@@ -14,27 +14,39 @@ from django.contrib.auth.decorators import login_required
 def charts(request):
     # total = Create.objects.filter(author=request.user).count()
     # date = Create.objects.filter(author=request.user).filter('pub_date')
-    config = request.user.username
-    usernames = User.objects.filter()
+    username = request.user.username
     total = Create.objects.count()
+    users_post_total = Create.objects.filter(author=request.user.id).count()
 
     def total_fav():
         # Create a trace
-        trace = go.Scatter(
-            x=[config, 'total'],
-            y=['test', total]
+        trace = go.Bar(
+            x=[f'{username.capitalize()} Post\'s', 'Total Post\'s'],
+            y=[users_post_total, total],
+            text=[f'Total Favorites added by: {username.capitalize()}', 'Total Favorites added by all Users'],
+            marker=dict(
+                color='rgb(158,202,225)',
+                line=dict(
+                    color='rgb(8,48,107)',
+                    width=1.5,
+                )
+            ),
+            opacity=0.6
         )
 
         data = [trace]
 
-        fig = go.Figure(data=data)
+        layout = go.Layout(
+            title='Showing off a Simple Graph',
+        )
+
+
+        fig = go.Figure(data=data, layout=layout)
         plot_div = plot(fig, output_type='div')
         return plot_div
 
     context = {
             'plot': total_fav(),
-            'users': usernames,
-            'test': 'yes'
         }
     return render(request, 'charts/charts.html', context)
 
