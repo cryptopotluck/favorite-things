@@ -8,6 +8,7 @@ from django.views import View
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.utils import timezone
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
@@ -58,6 +59,10 @@ class PostCreateView(CreateView):
     def form_valid(self, form):
 
         form.instance.author = self.request.user
+
+        while Create.objects.filter(author=self.request.user, rank=form.instance.rank):
+            form.instance.rank = form.instance.rank + 1
+
         response = super().form_valid(form)
 
         keywords = self.request.POST['hidden-category-value']

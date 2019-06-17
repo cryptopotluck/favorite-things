@@ -46,7 +46,8 @@ def register(request):
                 else:
                     # looks good
                     user = User.objects.create_user(email=email, username=username, password=password)
-                    auth.login(request, user)
+                    auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                    user.save()
                     messages.success(request, 'You are now logged in please enhance your profile.')
                     return redirect('index')
 

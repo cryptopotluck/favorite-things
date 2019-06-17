@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from graphene_django.views import GraphQLView
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +31,4 @@ urlpatterns = [
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True)))
-] + static(settings.MEDIAFILES_LOCATION, document_root=settings.DEFAULT_FILE_STORAGE)
+] + staticfiles_urlpatterns()

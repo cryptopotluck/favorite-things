@@ -4,7 +4,6 @@ import plotly.graph_objs as go
 from plotly.offline import plot
 # Create your views here.
 from django.views.generic import TemplateView
-from charts.plotly.total_posts.totalfavplotly import total_fav
 from user.models import User
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
@@ -12,8 +11,6 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def charts(request):
-    # total = Create.objects.filter(author=request.user).count()
-    # date = Create.objects.filter(author=request.user).filter('pub_date')
     username = request.user.username
     total = Create.objects.count()
     users_post_total = Create.objects.filter(author=request.user.id).count()
@@ -21,7 +18,7 @@ def charts(request):
     def total_fav():
         # Create a trace
         trace = go.Bar(
-            x=[f'{username.capitalize()} Post\'s', 'Total Post\'s'],
+            x=[f'{username.capitalize()} Post\'s', 'Total Posts'],
             y=[users_post_total, total],
             text=[f'Total Favorites added by: {username.capitalize()}', 'Total Favorites added by all Users'],
             marker=dict(
