@@ -9,7 +9,7 @@ dash-html-components==0.16.0
 dash-renderer==0.24.0
 dash-table==3.7.0
 decorator==4.4.0
-Django==2.2.2
+Django==2.2.21
 django-cors-headers==3.0.2
 django-graphql-jwt==0.2.1
 django-plotly-dash==0.9.12
