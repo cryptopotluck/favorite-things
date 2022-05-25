@@ -38,7 +38,7 @@ pipreqs==0.4.9
 plotly==3.10.0
 promise==2.2.1
 psycopg2-binary==2.8.2
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyrsistent==0.15.2
 python-dateutil==2.8.0
 pytz==2019.1
